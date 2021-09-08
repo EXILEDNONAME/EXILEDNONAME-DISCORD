@@ -89,6 +89,13 @@ client.on('interactionCreate', async (interaction) => {
           })
         })
       }
+      else {
+        interaction.reply({
+          content: ` :
+          Try start sending message on channel, Good Luck`,
+          ephemeral: true,
+        })
+      }
     })
   }
 
