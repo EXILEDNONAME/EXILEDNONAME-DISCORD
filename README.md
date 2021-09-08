@@ -11,6 +11,8 @@ DASHBOARD
 DISCORD BOT
 - npm install
 - npm install discord.js
+- npm install dotenv
+- npm install mysql
 - copy file env.example to .env
 - install pm2
 - pm2 main.js

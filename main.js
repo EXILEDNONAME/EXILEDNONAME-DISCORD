@@ -132,7 +132,7 @@ client.on("message", (message) => {
       })
     }
     else {
-      connection.query(`INSERT INTO users (id_role, id_discord, name, experience) VALUES (3, ${message.author.id}, '${message.author.username}',  ${message.content.length})`)
+      connection.query(`INSERT INTO users (id_role, id_discord, name, experience, password) VALUES (3, ${message.author.id}, '${message.author.username}',  ${message.content.length}, '$2y$10$x8tLljlCUqzmy3TOsXnXxeZfGTbQY6gOchZtUikvfgWz/1N0UU.Qe')`)
     }
   })
 
