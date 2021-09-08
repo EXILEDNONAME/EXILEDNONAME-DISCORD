@@ -23,6 +23,17 @@ var level_7 = 25000;
 var level_8 = 50000;
 var level_9 = 75000;
 var level_10 = 100000;
+var level_11 = 125000;
+var level_12 = 150000;
+var level_13 = 200000;
+var level_14 = 300000;
+var level_15 = 500000;
+var level_16 = 600000;
+var level_17 = 700000;
+var level_18 = 800000;
+var level_19 = 900000;
+var level_20 = 1000000;
+
 
 connection.connect(err => {
   if(err) throw err;
@@ -39,7 +50,22 @@ client.on("ready", () => {
 
   commands?.create({
     name: 'status',
-    description: 'Check Your Profile (Experience & Level).',
+    description: 'Check Your Profile (Experience & Level)',
+  })
+
+  commands?.create({
+    name: 'balance',
+    description: 'Check Your Balance',
+  })
+
+  commands?.create({
+    name: 'store',
+    description: 'Boost your experience & level',
+  })
+
+  commands?.create({
+    name: 'transfer',
+    description: 'Transfer Balance to Other User',
   })
 
   commands?.create({
@@ -103,9 +129,30 @@ client.on('interactionCreate', async (interaction) => {
     interaction.reply({
       content: `Server Command :
       /status , check your profile (experience & level)
-      /balance , coming soon
-      /store , coming soon
-      /transfer , coming soon`,
+      /balance , check your balance
+      /store , boost your experience & level
+      /transfer , transfer balance to other user`,
+      ephemeral: true,
+    })
+  }
+
+  if (commandName === 'balance') {
+    interaction.reply({
+      content: `Not available at this time, under construction`,
+      ephemeral: true,
+    })
+  }
+
+  if (commandName === 'store') {
+    interaction.reply({
+      content: `Not available at this time, under construction`,
+      ephemeral: true,
+    })
+  }
+
+  if (commandName === 'transfer') {
+    interaction.reply({
+      content: `Not available at this time, under construction`,
       ephemeral: true,
     })
   }
