@@ -7,7 +7,6 @@ class DefaultSeeder extends Seeder {
 
     // Default
     $this->call(Roles::class);
-    $this->call(Users::class);
 
   }
 }

@@ -12,7 +12,7 @@ class Roles extends Seeder {
         'created_at'    => Carbon::now(),
       ],
       [
-        'name'          => 'Operator',
+        'name'          => 'Member',
         'created_at'    => Carbon::now(),
       ],
       [
