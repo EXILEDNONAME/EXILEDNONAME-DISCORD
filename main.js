@@ -92,7 +92,7 @@ client.on('interactionCreate', async (interaction) => {
       else {
         interaction.reply({
           content: ` :
-          Try start sending message on channel, Good Luck`,
+          Try to start sending message on channel, Good Luck!`,
           ephemeral: true,
         })
       }
@@ -101,8 +101,7 @@ client.on('interactionCreate', async (interaction) => {
 
   if (commandName === 'help') {
     interaction.reply({
-      content: ` :
-      Server Command :
+      content: `Server Command :
       /status , check your profile (experience & level)
       /balance , coming soon
       /store , coming soon
