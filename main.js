@@ -76,7 +76,20 @@ client.on("ready", () => {
   commands?.create({
     name: 'help',
     description: 'Help Commands Server',
+  })
 
+  commands?.create({
+    name: 'check',
+    description: 'Send a GIF of a penguin',
+    options: [
+      {
+          name: "stickers",
+          description: "Whether to show only stickers",
+          // Type 5 is a boolean value
+          type: 3,
+          required: false
+      }
+    ]
   })
 
 })
