@@ -1,9 +1,14 @@
 require("dotenv").config();
 
+const { MessageEmbed } = require('discord.js');
 const { Client, Intents } = require('discord.js');
-const { createConnection } = require('mysql');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const { createConnection } = require('mysql');
 const prefix = process.env.PREFIX;
+const https = require("https");
+
+var converter = require('steam-id-convertor');
+var bigInt = require("big-integer");
 
 const connection = createConnection({
   host: process.env.DB_HOST,
@@ -117,8 +122,7 @@ client.on('interactionCreate', async (interaction) => {
       }
       else {
         interaction.reply({
-          content: ` :
-          Try to start sending message on channel, Good Luck!`,
+          content: `Try to start sending message on channel, Good Luck!`,
           ephemeral: true,
         })
       }
@@ -161,8 +165,14 @@ client.on('interactionCreate', async (interaction) => {
 
 client.on("message", (message) => {
 
+  let role = message.guild.roles.cache.find(r => r.name === "Level 1");
+  // ADD ROLE
+  message.guild.members.cache.get(message.author.id).roles.add(role);
+  // REMOVE ROLE
+  // message.guild.members.cache.get(message.author.id).roles.remove(role);
+
   var sql = `SELECT * FROM users WHERE id_discord = ${message.author.id}`
-  connection.query(sql, function (err, result, fields) {
+  connection.query(sql, function (err, result, fields, steam32ID) {
     if (err) throw err;
     if (result.length > 0 ) {
       let data = result.map(v => {
@@ -179,16 +189,150 @@ client.on("message", (message) => {
           }
         }
 
-        // IGNORING EXPERIENCE FROM COMMAND
-        else { connection.query(`UPDATE users SET experience = ${(v.experience * 1) + message.content.length} WHERE id_discord = ${message.author.id}`) }
+        // TEST
+        else if (message.content.startsWith(prefix + "statsdota")) {
 
+          var channelID = "884992367650807828";
+          var wins = "";
+          var loss = "";
+          https.get("https://api.opendota.com/api/players/" + v.id_dotaplayer, res => {
+            res.setEncoding("utf8");
+            let body = "";
+            res.on("data", data => {
+              body += data;
+            });
+            res.on("end", () => {
+              body = JSON.parse(body);
+
+              console.log(wins);
+
+
+
+              https.get("https://api.opendota.com/api/players/" + v.id_dotaplayer + "/wl", res => {
+
+                res.setEncoding("utf8");
+                let body2 = "";
+                res.on("data", data2 => {
+                  body2 += data2;
+                });
+                res.on("end", () => {
+                  body2 = JSON.parse(body2);
+                  if (body.profile == undefined) {
+                    console.log("profile not found");
+                    return;
+                  }
+                  wins = body2.win;
+                  loss = body2.lose;
+                  console.log(body.profile.account_id);
+                  var test2 = (body2.win / (body2.win + body2.lose)) * 100;
+                  console.log("Wins : " + body2.win);
+                  console.log("Losses : " + body2.lose);
+
+                  https.get("https://api.opendota.com/api/players/" + v.id_dotaplayer + "/recentMatches", res => {
+                    res.setEncoding("utf8");
+                    let tempData = "";
+                    res.on("data", data3 => {
+                      tempData += data3;
+                    });
+                    res.on("end", () => {
+                      tempData = JSON.parse(tempData);
+                      // console.log(tempData);
+                      var match = tempData[0];
+                      console.log("match"+match);
+
+                      var rankString = "";
+                      if (body.rank_tier !== null) {
+                        rankString += "Actual: ";
+                        if (body.rank_tier > '70') { rankString += "Divine [" }
+                        else if (body.rank_tier > '60') { rankString += "Ancient [" }
+                        else if (body.rank_tier > '50') { rankString += "Legend [" }
+                        else if (body.rank_tier > '40') { rankString += "Archon [" }
+                        else if (body.rank_tier > '30') { rankString += "Guardian [" }
+                        else if (body.rank_tier > '20') { rankString += "Herald ["; }
+                        rankString += (body.rank_tier + "").substring(1) + "]; "
+                        console.log(rankString);
+                      }
+
+                      var fieldsArray = [{
+                        name: "Name",
+                        value: body.profile.personaname + ""
+                      },
+                      {
+                        name: "MMR",
+                        value: rankString + "Estimated: " + body.mmr_estimate.estimate + ""
+                      },
+                      {
+                        name: "Win/Loss",
+                        value: "Wins: " + wins + " Losses: " + loss
+                      }];
+
+                      if (body.playerstats === undefined) {
+                        console.log({
+                          to: channelID,
+                          message: "Your wish is my command " + "<@!>" + "!",
+                          embed: {
+                            title: "Steam",
+                            url: "http://steamcommunity.com/id/1174475702",
+                            description: "[OpenDota](https://www.opendota.com/players/" + body.profile.account_id + ")",
+                              thumbnail: {
+                                url: body.profile.avatarfull + ""
+                              },
+                              fields: fieldsArray
+                            }
+                          }, function(error, response) {
+                            console.log(error);
+                            console.log(response);
+                          });
+                        }
+
+                        // TEST
+                        const exampleEmbed = new MessageEmbed()
+                        .setColor('#0099ff')
+                        .setTitle(rankString)
+                        .setURL('https://discord.js.org/')
+                        .setAuthor(body.profile.personaname, body.profile.avatarfull + "", 'https://discord.js.org')
+                        .setDescription(
+                          "Wins : " + body2.win + "\n" +
+                          "Losses : " + body2.lose + "\n" +
+                          "Winsrate : " + test2.toFixed(2) + "%" + "\n" +
+                          "MMR : ±" + body.mmr_estimate.estimate)
+                          // .setThumbnail('https://toppng.com//public/uploads/preview/dota-2-logo-png-image-library-download-logo-11563058448psapfna0tj.png')
+                          // .addFields(
+                          // 	{ name: 'Regular field title', value: 'Some value here' },
+                          // 	{ name: '\u200B', value: '\u200B' },
+                          // 	{ name: 'Inline field title', value: 'Some value here', inline: true },
+                          // 	{ name: 'Inline field title', value: 'Some value here', inline: true },
+                          // )
+                          .addField('Inline field title', 'Some value here', true)
+                          // .setImage(body.profile.avatarfull + "")
+                          .setTimestamp()
+                          .setFooter('Dota 2', body.profile.avatarfull + "");
+
+                          message.channel.send({ embeds: [exampleEmbed] });
+                          // END TEST
+
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+              // END DOTA STATS
+
+            }
+
+            // IGNORING EXPERIENCE FROM COMMAND
+            else {
+              connection.query(`UPDATE users SET experience = ${(v.experience * 1) + message.content.length} WHERE id_discord = ${message.author.id}`)
+            }
+
+          })
+        }
+        else {
+          connection.query(`INSERT INTO users (id_role, id_discord, name, experience, password) VALUES (3, ${message.author.id}, '${message.author.username}',  ${message.content.length}, '$2y$10$x8tLljlCUqzmy3TOsXnXxeZfGTbQY6gOchZtUikvfgWz/1N0UU.Qe')`)
+        }
       })
-    }
-    else {
-      connection.query(`INSERT INTO users (id_role, id_discord, name, experience, password) VALUES (3, ${message.author.id}, '${message.author.username}',  ${message.content.length}, '$2y$10$x8tLljlCUqzmy3TOsXnXxeZfGTbQY6gOchZtUikvfgWz/1N0UU.Qe')`)
-    }
-  })
 
-});
+    });
 
-client.login(process.env.TOKEN);
+    client.login(process.env.TOKEN);

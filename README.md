@@ -17,3 +17,7 @@ DISCORD BOT
 - install pm2
 - pm2 main.js
 - done!
+
+TO DO
+- Set Auto Member Level Roles
+- Profile With Parameters
