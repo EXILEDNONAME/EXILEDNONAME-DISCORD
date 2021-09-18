@@ -203,19 +203,16 @@ client.on("message", (message) => {
             res.on("data", data => { body += data; });
             res.on("end", () => {
               body = JSON.parse(body);
-              if (data.error == 'Internal Server Error' || typeof data.profile == 'undefined') {
-                console.log('Error, invalid ID');
-                message.channel.send(`<@${message.author.id}> There's no record!, Use the command !register dota <id>`);
-                message.channel.send(`<@${message.author.id}> Check your ID: https://www.opendota.com/`);
-              }
-              else {
                 https.get("https://api.opendota.com/api/players/" + v.id_dotaplayer + "/wl", res => {
                   res.setEncoding("utf8");
                   let body2 = "";
                   res.on("data", data2 => { body2 += data2; });
                   res.on("end", () => {
                     body2 = JSON.parse(body2);
-                    if (body.profile == undefined) { return; }
+                    if (body.profile == undefined) {
+                      message.channel.send(`<@${message.author.id}> There's no record!, Use the command !register dota <id>`);
+                      message.channel.send(`<@${message.author.id}> Check your ID: https://www.opendota.com/`);
+                    }
                     wins = body2.win;
                     loss = body2.lose;
                     var test2 = (body2.win / (body2.win + body2.lose)) * 100;
@@ -255,7 +252,6 @@ client.on("message", (message) => {
                       });
                     });
                   });
-                }
               });
             });
             // END DOTA STATS
