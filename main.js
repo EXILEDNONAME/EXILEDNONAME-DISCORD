@@ -88,7 +88,7 @@ client.on('interactionCreate', async (interaction) => {
         if (err) throw err;
         if (result.length > 0 ) {
           let data = result.map(v => {
-            if ( v.experience < level_1 ) { var level = '0'; var next = level_1 - level_0; var set = level_0; var max = level_1; }
+            if ( v.experience < level_1 ) { var level = '0'; var next = level_1 - level_0; var max = level_0; var set = level_1; }
             else if ( v.experience < level_2 ) { var level = '1'; var next = level_2 - level_1; var max = level_1; var set = level_2; }
             else if ( v.experience < level_3 ) { var level = '2'; var next = level_3 - level_2; var max = level_2; var set = level_3; }
             else if ( v.experience < level_4 ) { var level = '3'; var next = level_4 - level_3; var max = level_3; var set = level_4; }
@@ -98,7 +98,17 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_8 ) { var level = '7'; var next = level_8 - level_7; var max = level_7; var set = level_8; }
             else if ( v.experience < level_9 ) { var level = '8'; var next = level_9 - level_8; var max = level_8; var set = level_9; }
             else if ( v.experience < level_10 ) { var level = '9'; var next = level_10 - level_9; var max = level_9; var set = level_10; }
-            else { var level = '10'; var next = 0; }
+            else if ( v.experience < level_11 ) { var level = '10'; var next = level_11 - level_10; var max = level_10; var set = level_11; }
+            else if ( v.experience < level_12 ) { var level = '11'; var next = level_12 - level_11; var max = level_11; var set = level_12; }
+            else if ( v.experience < level_13 ) { var level = '12'; var next = level_13 - level_12; var max = level_12; var set = level_13; }
+            else if ( v.experience < level_14 ) { var level = '13'; var next = level_14 - level_13; var max = level_13; var set = level_14; }
+            else if ( v.experience < level_15 ) { var level = '14'; var next = level_15 - level_14; var max = level_14; var set = level_15; }
+            else if ( v.experience < level_16 ) { var level = '15'; var next = level_16 - level_15; var max = level_15; var set = level_16; }
+            else if ( v.experience < level_17 ) { var level = '16'; var next = level_17 - level_16; var max = level_16; var set = level_17; }
+            else if ( v.experience < level_18 ) { var level = '17'; var next = level_18 - level_17; var max = level_17; var set = level_18; }
+            else if ( v.experience < level_19 ) { var level = '18'; var next = level_19 - level_18; var max = level_18; var set = level_19; }
+            else if ( v.experience < level_20 ) { var level = '19'; var next = level_20 - level_19; var max = level_19; var set = level_20; }
+            else { var level = '20'; var next = 0; }
 
             var progress   = (v.experience - max);
             var progress_1 = (progress / set) * 100;
@@ -131,7 +141,7 @@ client.on('interactionCreate', async (interaction) => {
         if (err) throw err;
         if (result.length > 0 ) {
           let data = result.map(v => {
-            if ( v.experience < level_1 ) { var level = '0'; var next = level_1 - level_0; var set = level_0; var max = level_1; }
+            if ( v.experience < level_1 ) { var level = '0'; var next = level_1 - level_0; var max = level_0; var set = level_1; }
             else if ( v.experience < level_2 ) { var level = '1'; var next = level_2 - level_1; var max = level_1; var set = level_2; }
             else if ( v.experience < level_3 ) { var level = '2'; var next = level_3 - level_2; var max = level_2; var set = level_3; }
             else if ( v.experience < level_4 ) { var level = '3'; var next = level_4 - level_3; var max = level_3; var set = level_4; }
@@ -141,7 +151,17 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_8 ) { var level = '7'; var next = level_8 - level_7; var max = level_7; var set = level_8; }
             else if ( v.experience < level_9 ) { var level = '8'; var next = level_9 - level_8; var max = level_8; var set = level_9; }
             else if ( v.experience < level_10 ) { var level = '9'; var next = level_10 - level_9; var max = level_9; var set = level_10; }
-            else { var level = '10'; var next = 0; }
+            else if ( v.experience < level_11 ) { var level = '10'; var next = level_11 - level_10; var max = level_10; var set = level_11; }
+            else if ( v.experience < level_12 ) { var level = '11'; var next = level_12 - level_11; var max = level_11; var set = level_12; }
+            else if ( v.experience < level_13 ) { var level = '12'; var next = level_13 - level_12; var max = level_12; var set = level_13; }
+            else if ( v.experience < level_14 ) { var level = '13'; var next = level_14 - level_13; var max = level_13; var set = level_14; }
+            else if ( v.experience < level_15 ) { var level = '14'; var next = level_15 - level_14; var max = level_14; var set = level_15; }
+            else if ( v.experience < level_16 ) { var level = '15'; var next = level_16 - level_15; var max = level_15; var set = level_16; }
+            else if ( v.experience < level_17 ) { var level = '16'; var next = level_17 - level_16; var max = level_16; var set = level_17; }
+            else if ( v.experience < level_18 ) { var level = '17'; var next = level_18 - level_17; var max = level_17; var set = level_18; }
+            else if ( v.experience < level_19 ) { var level = '18'; var next = level_19 - level_18; var max = level_18; var set = level_19; }
+            else if ( v.experience < level_20 ) { var level = '19'; var next = level_20 - level_19; var max = level_19; var set = level_20; }
+            else { var level = '20'; var next = 0; }
 
             var progress   = (v.experience - max);
             var progress_1 = (progress / set) * 100;
@@ -265,7 +285,43 @@ client.on("message", (message) => {
             // SET AUTO ROLE
             var level = (v.experience * 1) + message.content.length;
 
-            if ( level > level_4 ) {
+            if ( level > level_10 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 10");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 9");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_9 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 9");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 8");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_8 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 8");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 7");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_7 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 7");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 6");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_6 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 6");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 5");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_5 ) {
+              var addrole = message.guild.roles.cache.find(r => r.name === "Level 5");
+              var delrole = message.guild.roles.cache.find(r => r.name === "Level 4");
+              message.guild.members.cache.get(message.author.id).roles.add(addrole);
+              message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+            }
+            else if ( level > level_4 ) {
               var addrole = message.guild.roles.cache.find(r => r.name === "Level 4");
               var delrole = message.guild.roles.cache.find(r => r.name === "Level 3");
               message.guild.members.cache.get(message.author.id).roles.add(addrole);
