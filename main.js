@@ -256,13 +256,12 @@ client.on("message", (message) => {
                         // TEST
                         const exampleEmbed = new MessageEmbed()
                         .setColor('#0099ff')
-                        .setTitle(rankString)
+                        .setTitle(v.id_dotaplayer)
                         .setURL('https://www.opendota.com/players/' + v.id_dotaplayer)
                         .setAuthor(body.profile.personaname, body.profile.avatarfull + "", 'https://www.opendota.com/players/' + v.id_dotaplayer)
                         .setDescription(
                           "WL : " + body2.win + "/" + body2.lose + "\n" +
-                          "Winsrate : " + test2.toFixed(2) + "%" + "\n" +
-                          "MMR : ±" + body.mmr_estimate.estimate + "\n \n")
+                          "Winsrate : " + test2.toFixed(2) + "%" + "\n")
                           .setTimestamp()
                           .setFooter('Dota 2', body.profile.avatarfull + "");
                           message.channel.send({ embeds: [exampleEmbed] });
