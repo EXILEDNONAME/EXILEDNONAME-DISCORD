@@ -111,7 +111,7 @@ client.on('interactionCreate', async (interaction) => {
             else { var level = '20'; var next = 0; }
 
             var progress   = (v.experience - max);
-            var progress_1 = (progress / set) * 100;
+            var progress_1 = (progress / next) * 100;
 
             if ( v.id_role == 1 ) { var roles = 'Administrator'; }
             if ( v.id_role == 2 ) { var roles = 'Member'; }
@@ -164,7 +164,7 @@ client.on('interactionCreate', async (interaction) => {
             else { var level = '20'; var next = 0; }
 
             var progress   = (v.experience - max);
-            var progress_1 = (progress / set) * 100;
+            var progress_1 = (progress / next) * 100;
 
             if ( v.id_role == 1 ) { var roles = 'Administrator'; }
             if ( v.id_role == 2 ) { var roles = 'Member'; }
