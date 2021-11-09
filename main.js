@@ -531,7 +531,7 @@ client.on("message", (message) => {
                 var addrole = message.guild.roles.cache.find(r => r.name === "Level 10");
                 var addrole = message.guild.roles.cache.find(r => r.name === "Member");
                 var delrole = message.guild.roles.cache.find(r => r.name === "Level 9");
-                message.channel.send("User <@" + message.author.id + '> has reached level 10' );
+                message.channel.send("User <@" + message.author.id + '> has reached level 10, and has reached to member status' );
               }
               else if ( level > level_9 ) {
                 var addrole = message.guild.roles.cache.find(r => r.name === "Level 9"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
