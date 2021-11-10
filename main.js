@@ -89,6 +89,14 @@ connection.connect(err => {
   console.log("Connecting To Server .....");
 });
 
+bot.on('guildMemberAdd', member => {
+  member.guild.channels.get('889590573953081444').send('Hi **' + member.user.username + '**, thanks for joined!');
+});
+
+bot.on('guildMemberRemove', member => {
+  member.guild.channels.get('889590573953081444').send('Oh noo **' + member.user.username + '**, has left :(');
+});
+
 client.on("ready", () => {
   console.log("Bot Connected!");
   const guild = client.guilds.cache.get(process.env.SERVER_ID)
