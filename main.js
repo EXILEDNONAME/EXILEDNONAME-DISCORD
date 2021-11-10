@@ -531,7 +531,7 @@ client.on("message", (message) => {
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 27"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
                   message.channel.send("User <@" + message.author.id + '> has reached level 38' );
                 }
-                else if ( level > level_37 ) {
+                else if ( level > level_37 && level != level_37 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 37"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 36"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
                   message.channel.send("User <@" + message.author.id + '> has reached level 37' );
