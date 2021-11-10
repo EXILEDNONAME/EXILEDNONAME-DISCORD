@@ -416,52 +416,52 @@ client.on("message", (message) => {
                 if ( level > level_60 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 59"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 60' );
+                  connection.query(`UPDATE users SET level = 60 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_59 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 59"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 58"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 59' );
+                  connection.query(`UPDATE users SET level = 59 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_58 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 58"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 57"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 58' );
+                  connection.query(`UPDATE users SET level = 58 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_57 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 57"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 56"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 57' );
+                  connection.query(`UPDATE users SET level = 57 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_56 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 56"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 55"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 56' );
+                  connection.query(`UPDATE users SET level = 56 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_55 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 55"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 54"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 55' );
+                  connection.query(`UPDATE users SET level = 55 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_54 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 54"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 53"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 54' );
+                  connection.query(`UPDATE users SET level = 54 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_53 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 53"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 52"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 53' );
+                  connection.query(`UPDATE users SET level = 53 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_52 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 52"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 51"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 52' );
+                  connection.query(`UPDATE users SET level = 52 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_51 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 51"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 50"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 51' );
+                  connection.query(`UPDATE users SET level = 51 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_50 ) {
                   message.guild.members.cache.get(message.author.id).roles.add(addrole);
@@ -469,202 +469,202 @@ client.on("message", (message) => {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 50");
                   var addrole = message.guild.roles.cache.find(r => r.name === "Bronze Member");
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 49");
-                  message.channel.send("User <@" + message.author.id + '> has reached level 50, and has reached bronze member status' );
+                  connection.query(`UPDATE users SET level = 50 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_49 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 49"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 48"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 49' );
+                  connection.query(`UPDATE users SET level = 49 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_48 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 48"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 47"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 48' );
+                  connection.query(`UPDATE users SET level = 48 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_47 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 47"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 46"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 47' );
+                  connection.query(`UPDATE users SET level = 47 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_46 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 46"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 45"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 46' );
+                  connection.query(`UPDATE users SET level = 46 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_45 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 45"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 44"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 45' );
+                  connection.query(`UPDATE users SET level = 45 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_44 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 44"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 43"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 44' );
+                  connection.query(`UPDATE users SET level = 44 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_43 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 43"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 42"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 43' );
+                  connection.query(`UPDATE users SET level = 43 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_42 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 42"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 41"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 42' );
+                  connection.query(`UPDATE users SET level = 42 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_41 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 41"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 40"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 41' );
+                  connection.query(`UPDATE users SET level = 41 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_40 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 40"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 39"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 40' );
+                  connection.query(`UPDATE users SET level = 40 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_39 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 39"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 38"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 39' );
+                  connection.query(`UPDATE users SET level = 39 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_38 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 38"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 27"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 38' );
+                  connection.query(`UPDATE users SET level = 38 WHERE id_discord = ${message.author.id}`)
                 }
-                else if ( level > level_37 && v.experience != level_37 ) {
+                else if ( level > level_37 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 37"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 36"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 37' );
+                  connection.query(`UPDATE users SET level = 37 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_36 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 36"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 35"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 36' );
+                  connection.query(`UPDATE users SET level = 36 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_35 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 35"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 34"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 35' );
+                  connection.query(`UPDATE users SET level = 35 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_34 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 34"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 33"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 34' );
+                  connection.query(`UPDATE users SET level = 34 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_33 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 33"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 32"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 33' );
+                  connection.query(`UPDATE users SET level = 33 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_32 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 32"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 31"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 32' );
+                  connection.query(`UPDATE users SET level = 32 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_31 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 31"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 30"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 31' );
+                  connection.query(`UPDATE users SET level = 31 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_30 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 30"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 29"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 30' );
+                  connection.query(`UPDATE users SET level = 30 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_29 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 29"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 28"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 29' );
+                  connection.query(`UPDATE users SET level = 29 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_28 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 28"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 27"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 28' );
+                  connection.query(`UPDATE users SET level = 28 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_27 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 27"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 26"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 27' );
+                  connection.query(`UPDATE users SET level = 27 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_26 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 26"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 25"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 26' );
+                  connection.query(`UPDATE users SET level = 26 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_25 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 25"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 24"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 25' );
+                  connection.query(`UPDATE users SET level = 25 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_24 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 24"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 23"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 24' );
+                  connection.query(`UPDATE users SET level = 24 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_23 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 23"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 22"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 23' );
+                  connection.query(`UPDATE users SET level = 23 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_22 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 22"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 21"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 22' );
+                  connection.query(`UPDATE users SET level = 22 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_21 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 21"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 20"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 21' );
+                  connection.query(`UPDATE users SET level = 21 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_20 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 20"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 19"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 20' );
+                  connection.query(`UPDATE users SET level = 20 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_19 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 19"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 18"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 19' );
+                  connection.query(`UPDATE users SET level = 19 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_18 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 18"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 17"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 18' );
+                  connection.query(`UPDATE users SET level = 18 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_17 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 17"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 16"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 17' );
+                  connection.query(`UPDATE users SET level = 17 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_16 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 16"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 15"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 16' );
+                  connection.query(`UPDATE users SET level = 16 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_15 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 15"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 14"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 15' );
+                  connection.query(`UPDATE users SET level = 15 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_14 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 14"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 13"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 14' );
+                  connection.query(`UPDATE users SET level = 14 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_13 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 13"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 12"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 13' );
+                  connection.query(`UPDATE users SET level = 13 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_12 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 12"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 11"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 12' );
+                  connection.query(`UPDATE users SET level = 12 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_11 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 11"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 10"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 11' );
+                  connection.query(`UPDATE users SET level = 11 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_10 ) {
                   message.guild.members.cache.get(message.author.id).roles.add(addrole);
@@ -672,51 +672,51 @@ client.on("message", (message) => {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 10");
                   var addrole = message.guild.roles.cache.find(r => r.name === "Member");
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 9");
-                  message.channel.send("User <@" + message.author.id + '> has reached level 10, and has reached member status' );
+                  connection.query(`UPDATE users SET level = 10 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_9 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 9"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 8"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 9' );
+                  connection.query(`UPDATE users SET level = 9 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_8 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 8"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 7"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 8' );
+                  connection.query(`UPDATE users SET level = 8 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_7 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 7"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 6"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 7' );
+                  connection.query(`UPDATE users SET level = 7 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_6 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 6"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 5"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 6' );
+                  connection.query(`UPDATE users SET level = 6 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_5 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 5"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 4"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 5' );
+                  connection.query(`UPDATE users SET level = 5 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_4 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 4"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 3"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 4' );
+                  connection.query(`UPDATE users SET level = 4 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_3 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 3"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 2"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 3' );
+                  connection.query(`UPDATE users SET level = 3 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_2 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 2"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 1"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  message.channel.send("User @{" + message.author.id + '} has reached level 2' );
+                  connection.query(`UPDATE users SET level = 2 WHERE id_discord = ${message.author.id}`)
                 }
                 else {
                   var role = message.guild.roles.cache.find(r => r.name === "Level 1"); message.guild.members.cache.get(message.author.id).roles.add(role);
-                  message.channel.send("User <@" + message.author.id + '> has reached level 1' );
+                  connection.query(`UPDATE users SET level = 1 WHERE id_discord = ${message.author.id}`)
                 }
                 // END SET AUTO ROLE
               }
