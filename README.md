@@ -21,3 +21,5 @@ DISCORD BOT
 TO DO
 - Set Auto Member Level Roles
 - Profile With Parameters
+- Announcement Greetings
+- External Files

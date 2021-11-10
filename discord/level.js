@@ -1,5 +1,10 @@
-var level = function() {
-	var level_0 = 0;
-};
-
-module.exports = level;
+var level_61 = 19750;
+var level_62 = 19750;
+var level_63 = 19750;
+var level_64 = 19750;
+var level_65 = 19750;
+var level_66 = 19750;
+var level_67 = 19750;
+var level_68 = 19750;
+var level_69 = 19750;
+var level_70 = 19750;
