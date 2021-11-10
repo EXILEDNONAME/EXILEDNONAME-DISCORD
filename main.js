@@ -534,6 +534,10 @@ client.on("message", (message) => {
                 else if ( level > level_37 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 37"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 36"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 37 ) {
+                    message.channel.send("User <@" + message.author.id + '> has reached level 37' );
+                  }
+
                   connection.query(`UPDATE users SET level = 37 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_36 ) {
