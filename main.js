@@ -79,7 +79,20 @@ var level_56 = 17550;
 var level_57 = 18100;
 var level_58 = 18650;
 var level_59 = 19200;
-var level_60 = 19750; // Last +550
+var level_60 = 19750;
+
+var level_61 = 20350;
+var level_62 = 20950;
+var level_63 = 21550;
+var level_64 = 22150;
+var level_65 = 22750;
+var level_66 = 23350;
+var level_67 = 23950;
+var level_68 = 24550;
+var level_69 = 25150;
+var level_70 = 25750;
+
+// Last +550
 
 const fs = require('fs');
 const path = require('path');
