@@ -411,7 +411,6 @@ client.on("message", (message) => {
 
                 // SET AUTO ROLE
                 var level = (v.experience * 1) + message.content.length;
-                console.log(level);
 
                 if ( level > level_70 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
