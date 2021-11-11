@@ -13,6 +13,7 @@ DISCORD BOT
 - npm install discord.js
 - npm install dotenv
 - npm install mysql
+- npm install ffmpeg fluent-ffmpeg @discordjs/opus ytdl-core --save
 - copy file env.example to .env
 - install pm2
 - pm2 main.js

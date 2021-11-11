@@ -6,6 +6,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const { createConnection } = require('mysql');
 const prefix = process.env.PREFIX;
 const https = require("https");
+const ytdl = require('ytdl-core');
 
 var converter = require('steam-id-convertor');
 var bigInt = require("big-integer");
@@ -92,7 +93,41 @@ var level_68 = 24550;
 var level_69 = 25150;
 var level_70 = 25750;
 
-// Last +550
+var level_71 = 26400;
+var level_72 = 27050;
+var level_73 = 27700;
+var level_74 = 28350;
+var level_75 = 29000;
+var level_76 = 29650;
+var level_77 = 30300;
+var level_78 = 30950;
+var level_79 = 31600;
+var level_80 = 32250;
+
+var level_81 = 32950;
+var level_82 = 33650;
+var level_83 = 34350;
+var level_84 = 35050;
+var level_85 = 35750;
+var level_86 = 36450;
+var level_87 = 37150;
+var level_88 = 37850;
+var level_89 = 38550;
+var level_90 = 39250;
+
+var level_91 = 40000;
+var level_92 = 40750;
+var level_93 = 41500;
+var level_94 = 42250;
+var level_95 = 43000;
+var level_96 = 43750;
+var level_97 = 44500;
+var level_98 = 45250;
+var level_99 = 46000;
+var level_100 = 46750;
+
+// Last +650
+
 
 const fs = require('fs');
 const path = require('path');
@@ -802,7 +837,7 @@ client.on("message", (message) => {
                 else if ( level > level_10 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 10"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 9"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
-                  if ( v.level != 11 ) { message.channel.send("User <@" + message.author.id + '> has reached level 10' ); }
+                  if ( v.level != 10 ) { message.channel.send("User <@" + message.author.id + '> has reached level 10' ); }
                   connection.query(`UPDATE users SET level = 10 WHERE id_discord = ${message.author.id}`)
                 }
                 else if ( level > level_9 ) {

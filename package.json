@@ -24,11 +24,15 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@discordjs/opus": "^0.6.0",
         "big-integer": "^1.6.48",
-        "discord.js": "^13.1.0",
+        "discord.js": "^13.3.1",
         "dotenv": "^10.0.0",
+        "ffmpeg": "^0.0.4",
+        "fluent-ffmpeg": "^2.1.2",
         "leven": "^4.0.0",
         "mysql": "^2.18.1",
-        "steam-id-convertor": "^1.0.1"
+        "steam-id-convertor": "^1.0.1",
+        "ytdl-core": "^4.9.1"
     }
 }
