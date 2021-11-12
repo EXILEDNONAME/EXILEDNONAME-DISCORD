@@ -6,7 +6,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const { createConnection } = require('mysql');
 const prefix = process.env.PREFIX;
 const https = require("https");
-const ytdl = require('ytdl-core');
 
 var converter = require('steam-id-convertor');
 var bigInt = require("big-integer");
@@ -126,7 +125,7 @@ var level_98 = 45250;
 var level_99 = 46000;
 var level_100 = 46750;
 
-// Last +650
+// Last +750
 
 
 const fs = require('fs');
@@ -248,7 +247,47 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_58 ) { var level = '57'; var next = level_58 - level_57; var max = level_57; var set = level_58; }
             else if ( v.experience < level_59 ) { var level = '58'; var next = level_59 - level_58; var max = level_58; var set = level_59; }
             else if ( v.experience < level_60 ) { var level = '59'; var next = level_60 - level_59; var max = level_59; var set = level_60; }
-            else { var level = '60'; var next = 0; }
+            else if ( v.experience < level_61 ) { var level = '60'; var next = level_61 - level_60; var max = level_60; var set = level_61; }
+            else if ( v.experience < level_62 ) { var level = '61'; var next = level_62 - level_61; var max = level_61; var set = level_62; }
+            else if ( v.experience < level_63 ) { var level = '62'; var next = level_63 - level_62; var max = level_62; var set = level_63; }
+            else if ( v.experience < level_64 ) { var level = '63'; var next = level_64 - level_63; var max = level_63; var set = level_64; }
+            else if ( v.experience < level_65 ) { var level = '64'; var next = level_65 - level_64; var max = level_64; var set = level_65; }
+            else if ( v.experience < level_66 ) { var level = '65'; var next = level_66 - level_65; var max = level_65; var set = level_66; }
+            else if ( v.experience < level_67 ) { var level = '66'; var next = level_67 - level_66; var max = level_66; var set = level_67; }
+            else if ( v.experience < level_68 ) { var level = '67'; var next = level_68 - level_67; var max = level_67; var set = level_68; }
+            else if ( v.experience < level_69 ) { var level = '68'; var next = level_69 - level_68; var max = level_68; var set = level_69; }
+            else if ( v.experience < level_70 ) { var level = '69'; var next = level_70 - level_69; var max = level_69; var set = level_70; }
+            else if ( v.experience < level_71 ) { var level = '70'; var next = level_71 - level_70; var max = level_70; var set = level_71; }
+            else if ( v.experience < level_72 ) { var level = '71'; var next = level_72 - level_71; var max = level_71; var set = level_72; }
+            else if ( v.experience < level_73 ) { var level = '72'; var next = level_73 - level_72; var max = level_72; var set = level_73; }
+            else if ( v.experience < level_74 ) { var level = '73'; var next = level_74 - level_73; var max = level_73; var set = level_74; }
+            else if ( v.experience < level_75 ) { var level = '74'; var next = level_75 - level_74; var max = level_74; var set = level_75; }
+            else if ( v.experience < level_76 ) { var level = '75'; var next = level_76 - level_75; var max = level_75; var set = level_76; }
+            else if ( v.experience < level_77 ) { var level = '76'; var next = level_77 - level_76; var max = level_76; var set = level_77; }
+            else if ( v.experience < level_78 ) { var level = '77'; var next = level_78 - level_77; var max = level_77; var set = level_78; }
+            else if ( v.experience < level_79 ) { var level = '78'; var next = level_79 - level_78; var max = level_78; var set = level_79; }
+            else if ( v.experience < level_80 ) { var level = '79'; var next = level_80 - level_79; var max = level_79; var set = level_80; }
+            else if ( v.experience < level_81 ) { var level = '80'; var next = level_81 - level_80; var max = level_80; var set = level_81; }
+            else if ( v.experience < level_82 ) { var level = '81'; var next = level_82 - level_81; var max = level_81; var set = level_82; }
+            else if ( v.experience < level_83 ) { var level = '82'; var next = level_83 - level_82; var max = level_82; var set = level_83; }
+            else if ( v.experience < level_84 ) { var level = '83'; var next = level_84 - level_83; var max = level_83; var set = level_84; }
+            else if ( v.experience < level_85 ) { var level = '84'; var next = level_85 - level_84; var max = level_84; var set = level_85; }
+            else if ( v.experience < level_86 ) { var level = '85'; var next = level_86 - level_85; var max = level_85; var set = level_86; }
+            else if ( v.experience < level_87 ) { var level = '86'; var next = level_87 - level_86; var max = level_86; var set = level_87; }
+            else if ( v.experience < level_88 ) { var level = '87'; var next = level_88 - level_87; var max = level_87; var set = level_88; }
+            else if ( v.experience < level_89 ) { var level = '88'; var next = level_89 - level_88; var max = level_88; var set = level_89; }
+            else if ( v.experience < level_90 ) { var level = '89'; var next = level_90 - level_89; var max = level_89; var set = level_90; }
+            else if ( v.experience < level_91 ) { var level = '90'; var next = level_91 - level_90; var max = level_90; var set = level_91; }
+            else if ( v.experience < level_92 ) { var level = '91'; var next = level_92 - level_91; var max = level_91; var set = level_92; }
+            else if ( v.experience < level_93 ) { var level = '92'; var next = level_93 - level_92; var max = level_92; var set = level_93; }
+            else if ( v.experience < level_94 ) { var level = '93'; var next = level_94 - level_93; var max = level_93; var set = level_94; }
+            else if ( v.experience < level_95 ) { var level = '94'; var next = level_95 - level_94; var max = level_94; var set = level_95; }
+            else if ( v.experience < level_96 ) { var level = '95'; var next = level_96 - level_95; var max = level_95; var set = level_96; }
+            else if ( v.experience < level_97 ) { var level = '96'; var next = level_97 - level_96; var max = level_96; var set = level_97; }
+            else if ( v.experience < level_98 ) { var level = '97'; var next = level_98 - level_97; var max = level_97; var set = level_98; }
+            else if ( v.experience < level_99 ) { var level = '98'; var next = level_99 - level_98; var max = level_98; var set = level_99; }
+            else if ( v.experience < level_100 ) { var level = '99'; var next = level_100 - level_99; var max = level_99; var set = level_100; }
+            else { var level = '100'; var next = 0; }
 
             var progress   = (v.experience - max);
             var progress_1 = (progress / next) * 100;
@@ -341,7 +380,47 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_58 ) { var level = '57'; var next = level_58 - level_57; var max = level_57; var set = level_58; }
             else if ( v.experience < level_59 ) { var level = '58'; var next = level_59 - level_58; var max = level_58; var set = level_59; }
             else if ( v.experience < level_60 ) { var level = '59'; var next = level_60 - level_59; var max = level_59; var set = level_60; }
-            else { var level = '60'; var next = 0; }
+            else if ( v.experience < level_61 ) { var level = '60'; var next = level_61 - level_60; var max = level_60; var set = level_61; }
+            else if ( v.experience < level_62 ) { var level = '61'; var next = level_62 - level_61; var max = level_61; var set = level_62; }
+            else if ( v.experience < level_63 ) { var level = '62'; var next = level_63 - level_62; var max = level_62; var set = level_63; }
+            else if ( v.experience < level_64 ) { var level = '63'; var next = level_64 - level_63; var max = level_63; var set = level_64; }
+            else if ( v.experience < level_65 ) { var level = '64'; var next = level_65 - level_64; var max = level_64; var set = level_65; }
+            else if ( v.experience < level_66 ) { var level = '65'; var next = level_66 - level_65; var max = level_65; var set = level_66; }
+            else if ( v.experience < level_67 ) { var level = '66'; var next = level_67 - level_66; var max = level_66; var set = level_67; }
+            else if ( v.experience < level_68 ) { var level = '67'; var next = level_68 - level_67; var max = level_67; var set = level_68; }
+            else if ( v.experience < level_69 ) { var level = '68'; var next = level_69 - level_68; var max = level_68; var set = level_69; }
+            else if ( v.experience < level_70 ) { var level = '69'; var next = level_70 - level_69; var max = level_69; var set = level_70; }
+            else if ( v.experience < level_71 ) { var level = '70'; var next = level_71 - level_70; var max = level_70; var set = level_71; }
+            else if ( v.experience < level_72 ) { var level = '71'; var next = level_72 - level_71; var max = level_71; var set = level_72; }
+            else if ( v.experience < level_73 ) { var level = '72'; var next = level_73 - level_72; var max = level_72; var set = level_73; }
+            else if ( v.experience < level_74 ) { var level = '73'; var next = level_74 - level_73; var max = level_73; var set = level_74; }
+            else if ( v.experience < level_75 ) { var level = '74'; var next = level_75 - level_74; var max = level_74; var set = level_75; }
+            else if ( v.experience < level_76 ) { var level = '75'; var next = level_76 - level_75; var max = level_75; var set = level_76; }
+            else if ( v.experience < level_77 ) { var level = '76'; var next = level_77 - level_76; var max = level_76; var set = level_77; }
+            else if ( v.experience < level_78 ) { var level = '77'; var next = level_78 - level_77; var max = level_77; var set = level_78; }
+            else if ( v.experience < level_79 ) { var level = '78'; var next = level_79 - level_78; var max = level_78; var set = level_79; }
+            else if ( v.experience < level_80 ) { var level = '79'; var next = level_80 - level_79; var max = level_79; var set = level_80; }
+            else if ( v.experience < level_81 ) { var level = '80'; var next = level_81 - level_80; var max = level_80; var set = level_81; }
+            else if ( v.experience < level_82 ) { var level = '81'; var next = level_82 - level_81; var max = level_81; var set = level_82; }
+            else if ( v.experience < level_83 ) { var level = '82'; var next = level_83 - level_82; var max = level_82; var set = level_83; }
+            else if ( v.experience < level_84 ) { var level = '83'; var next = level_84 - level_83; var max = level_83; var set = level_84; }
+            else if ( v.experience < level_85 ) { var level = '84'; var next = level_85 - level_84; var max = level_84; var set = level_85; }
+            else if ( v.experience < level_86 ) { var level = '85'; var next = level_86 - level_85; var max = level_85; var set = level_86; }
+            else if ( v.experience < level_87 ) { var level = '86'; var next = level_87 - level_86; var max = level_86; var set = level_87; }
+            else if ( v.experience < level_88 ) { var level = '87'; var next = level_88 - level_87; var max = level_87; var set = level_88; }
+            else if ( v.experience < level_89 ) { var level = '88'; var next = level_89 - level_88; var max = level_88; var set = level_89; }
+            else if ( v.experience < level_90 ) { var level = '89'; var next = level_90 - level_89; var max = level_89; var set = level_90; }
+            else if ( v.experience < level_91 ) { var level = '90'; var next = level_91 - level_90; var max = level_90; var set = level_91; }
+            else if ( v.experience < level_92 ) { var level = '91'; var next = level_92 - level_91; var max = level_91; var set = level_92; }
+            else if ( v.experience < level_93 ) { var level = '92'; var next = level_93 - level_92; var max = level_92; var set = level_93; }
+            else if ( v.experience < level_94 ) { var level = '93'; var next = level_94 - level_93; var max = level_93; var set = level_94; }
+            else if ( v.experience < level_95 ) { var level = '94'; var next = level_95 - level_94; var max = level_94; var set = level_95; }
+            else if ( v.experience < level_96 ) { var level = '95'; var next = level_96 - level_95; var max = level_95; var set = level_96; }
+            else if ( v.experience < level_97 ) { var level = '96'; var next = level_97 - level_96; var max = level_96; var set = level_97; }
+            else if ( v.experience < level_98 ) { var level = '97'; var next = level_98 - level_97; var max = level_97; var set = level_98; }
+            else if ( v.experience < level_99 ) { var level = '98'; var next = level_99 - level_98; var max = level_98; var set = level_99; }
+            else if ( v.experience < level_100 ) { var level = '99'; var next = level_100 - level_99; var max = level_99; var set = level_100; }
+            else { var level = '100'; var next = 0; }
 
             var progress   = (v.experience - max);
             var progress_1 = (progress / next) * 100;
@@ -470,6 +549,66 @@ client.on("message", (message) => {
 
                 if ( level > level_70 ) {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 80 ) { message.channel.send("User <@" + message.author.id + '> has reached level 80' ); }
+                  connection.query(`UPDATE users SET level = 80 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 79 ) { message.channel.send("User <@" + message.author.id + '> has reached level 79' ); }
+                  connection.query(`UPDATE users SET level = 79 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 78 ) { message.channel.send("User <@" + message.author.id + '> has reached level 78' ); }
+                  connection.query(`UPDATE users SET level = 78 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 77 ) { message.channel.send("User <@" + message.author.id + '> has reached level 77' ); }
+                  connection.query(`UPDATE users SET level = 77 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 76 ) { message.channel.send("User <@" + message.author.id + '> has reached level 76' ); }
+                  connection.query(`UPDATE users SET level = 76 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 75 ) { message.channel.send("User <@" + message.author.id + '> has reached level 75' ); }
+                  connection.query(`UPDATE users SET level = 75 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 74 ) { message.channel.send("User <@" + message.author.id + '> has reached level 74' ); }
+                  connection.query(`UPDATE users SET level = 74 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 73 ) { message.channel.send("User <@" + message.author.id + '> has reached level 73' ); }
+                  connection.query(`UPDATE users SET level = 73 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 72 ) { message.channel.send("User <@" + message.author.id + '> has reached level 72' ); }
+                  connection.query(`UPDATE users SET level = 72 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 60"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
+                  if ( v.level != 71 ) { message.channel.send("User <@" + message.author.id + '> has reached level 71' ); }
+                  connection.query(`UPDATE users SET level = 71 WHERE id_discord = ${message.author.id}`)
+                }
+                if ( level > level_70 ) {
+                  var addrole = message.guild.roles.cache.find(r => r.name === "Level 70"); message.guild.members.cache.get(message.author.id).roles.add(addrole);
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 69"); message.guild.members.cache.get(message.author.id).roles.remove(delrole);
                   if ( v.level != 70 ) { message.channel.send("User <@" + message.author.id + '> has reached level 70' ); }
                   connection.query(`UPDATE users SET level = 70 WHERE id_discord = ${message.author.id}`)
