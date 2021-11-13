@@ -224,9 +224,9 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_35 ) { var level = '34'; var next = level_35 - level_34; var max = level_34; var set = level_35; }
             else if ( v.experience < level_36 ) { var level = '35'; var next = level_36 - level_35; var max = level_35; var set = level_36; }
             else if ( v.experience < level_37 ) { var level = '36'; var next = level_37 - level_36; var max = level_36; var set = level_37; }
-            else if ( v.experience < level_38 ) { var level = '37'; var next = level_38 - level_38; var max = level_37; var set = level_38; }
-            else if ( v.experience < level_39 ) { var level = '38'; var next = level_39 - level_39; var max = level_38; var set = level_39; }
-            else if ( v.experience < level_40 ) { var level = '39'; var next = level_40 - level_40; var max = level_39; var set = level_40; }
+            else if ( v.experience < level_38 ) { var level = '37'; var next = level_38 - level_37; var max = level_37; var set = level_38; }
+            else if ( v.experience < level_39 ) { var level = '38'; var next = level_39 - level_38; var max = level_38; var set = level_39; }
+            else if ( v.experience < level_40 ) { var level = '39'; var next = level_40 - level_39; var max = level_39; var set = level_40; }
             else if ( v.experience < level_41 ) { var level = '40'; var next = level_41 - level_40; var max = level_40; var set = level_41; }
             else if ( v.experience < level_42 ) { var level = '41'; var next = level_42 - level_41; var max = level_41; var set = level_42; }
             else if ( v.experience < level_43 ) { var level = '42'; var next = level_43 - level_42; var max = level_42; var set = level_43; }
@@ -359,7 +359,7 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_37 ) { var level = '36'; var next = level_37 - level_36; var max = level_36; var set = level_37; }
             else if ( v.experience < level_38 ) { var level = '37'; var next = level_38 - level_37; var max = level_37; var set = level_38; }
             else if ( v.experience < level_39 ) { var level = '38'; var next = level_39 - level_38; var max = level_38; var set = level_39; }
-            else if ( v.experience < level_40 ) { var level = '39'; var next = level_40 - level_40; var max = level_39; var set = level_40; }
+            else if ( v.experience < level_40 ) { var level = '39'; var next = level_40 - level_39; var max = level_39; var set = level_40; }
             else if ( v.experience < level_41 ) { var level = '40'; var next = level_41 - level_40; var max = level_40; var set = level_41; }
             else if ( v.experience < level_42 ) { var level = '41'; var next = level_42 - level_41; var max = level_41; var set = level_42; }
             else if ( v.experience < level_43 ) { var level = '42'; var next = level_43 - level_42; var max = level_42; var set = level_43; }
