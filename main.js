@@ -133,17 +133,6 @@ var level_100 = 54750;
 var level_110 = 55550;
 // Last +800
 
-var level_111 = -;
-var level_112 = -;
-var level_113 = -;
-var level_114 = -;
-var level_115 = -;
-var level_116 = -;
-var level_117 = -;
-var level_118 = -;
-var level_119 = -;
-var level_120 = -;
-
 const fs = require('fs');
 const path = require('path');
 
