@@ -79,7 +79,6 @@ var level_57 = 18100;
 var level_58 = 18650;
 var level_59 = 19200;
 var level_60 = 19750;
-
 var level_61 = 20350;
 var level_62 = 20950;
 var level_63 = 21550;
@@ -90,7 +89,6 @@ var level_67 = 23950;
 var level_68 = 24550;
 var level_69 = 25150;
 var level_70 = 25750;
-
 var level_71 = 26400;
 var level_72 = 27050;
 var level_73 = 27700;
@@ -101,7 +99,6 @@ var level_77 = 30300;
 var level_78 = 30950;
 var level_79 = 31600;
 var level_80 = 32250;
-
 var level_81 = 32950;
 var level_82 = 33650;
 var level_83 = 34350;
@@ -112,7 +109,6 @@ var level_87 = 37150;
 var level_88 = 37850;
 var level_89 = 38550;
 var level_90 = 39250;
-
 var level_91 = 40000;
 var level_92 = 40750;
 var level_93 = 41500;
@@ -124,8 +120,29 @@ var level_98 = 45250;
 var level_99 = 46000;
 var level_100 = 46750;
 
-// Last +750
+var level_101 = 47550;
+var level_102 = 48350;
+var level_103 = 49150;
+var level_104 = 49950;
+var level_105 = 50750;
+var level_106 = 51550;
+var level_107 = 52350;
+var level_108 = 53150;
+var level_109 = 53950;
+var level_100 = 54750;
+var level_110 = 55550;
+// Last +800
 
+var level_111 = -;
+var level_112 = -;
+var level_113 = -;
+var level_114 = -;
+var level_115 = -;
+var level_116 = -;
+var level_117 = -;
+var level_118 = -;
+var level_119 = -;
+var level_120 = -;
 
 const fs = require('fs');
 const path = require('path');
@@ -852,6 +869,7 @@ client.on("message", (message) => {
                   var addrole = message.guild.roles.cache.find(r => r.name === "Level 50");
                   var addrole = message.guild.roles.cache.find(r => r.name === "Bronze Member");
                   var delrole = message.guild.roles.cache.find(r => r.name === "Level 49");
+                  var delrole = message.guild.roles.cache.find(r => r.name === "Member");
                   if ( v.level != 50 ) { message.channel.send("User <@" + message.author.id + '> has reached level 50 and has reached bronze member status.' ); }
                   connection.query(`UPDATE users SET level = 50 WHERE id_discord = ${message.author.id}`)
                 }
