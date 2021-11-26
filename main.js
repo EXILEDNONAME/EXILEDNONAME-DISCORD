@@ -544,7 +544,7 @@ client.on("message", (message) => {
 
               connection.query(`UPDATE users SET experience = ${(v.experience * 1) + message.content.length} WHERE id_discord = ${message.author.id}`)
 
-              if ( v.id_discord == 407547959605985280 ) {
+              if ( v.id_discord == 407547959605985280 || v.id_discord == 913081462394327070 ) {
                 //
               }
               else {
