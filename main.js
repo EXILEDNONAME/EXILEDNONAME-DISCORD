@@ -219,9 +219,9 @@ client.on('interactionCreate', async (interaction) => {
             else if ( v.experience < level_25 ) { var level = '24'; var next = level_25 - level_24; var max = level_24; var set = level_25; }
             else if ( v.experience < level_26 ) { var level = '25'; var next = level_26 - level_25; var max = level_25; var set = level_26; }
             else if ( v.experience < level_27 ) { var level = '26'; var next = level_27 - level_26; var max = level_26; var set = level_27; }
-            else if ( v.experience < level_28 ) { var level = '27'; var next = level_28 - level_28; var max = level_27; var set = level_28; }
-            else if ( v.experience < level_29 ) { var level = '28'; var next = level_29 - level_29; var max = level_28; var set = level_29; }
-            else if ( v.experience < level_30 ) { var level = '29'; var next = level_30 - level_30; var max = level_29; var set = level_30; }
+            else if ( v.experience < level_28 ) { var level = '27'; var next = level_28 - level_27; var max = level_27; var set = level_28; }
+            else if ( v.experience < level_29 ) { var level = '28'; var next = level_29 - level_28; var max = level_28; var set = level_29; }
+            else if ( v.experience < level_30 ) { var level = '29'; var next = level_30 - level_29; var max = level_29; var set = level_30; }
             else if ( v.experience < level_31 ) { var level = '30'; var next = level_31 - level_30; var max = level_30; var set = level_31; }
             else if ( v.experience < level_32 ) { var level = '31'; var next = level_32 - level_31; var max = level_31; var set = level_32; }
             else if ( v.experience < level_33 ) { var level = '32'; var next = level_33 - level_32; var max = level_32; var set = level_33; }
